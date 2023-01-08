@@ -20,7 +20,7 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <title>
-       {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+       {{ $url := replace .Permalink ( printf "%s" (.Site.BaseURL | relLangURL)) "" }}
        {{ if .IsHome }}
            {{ .Site.Title }}
        {{ else if .Params.heading }}
