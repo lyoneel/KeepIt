@@ -15,6 +15,15 @@
                   <a class="menu-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ $finalUrl }}" title="{{ .Title }}">{{ .Name }}</a>
                 {{ end }}
                 <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+                {{ $langUrl := .Site.BaseURL }}
+                {{ $langName := lower .Site.Language }}
+                {{ if eq $langName "en" }}
+                  {{ $langUrl = print $langUrl "es" }}
+                  {{ $langName = "es" }}
+                {{ else }}
+                  {{ $langName = "en" }}
+                {{ end }}
+                <a href="{{- $langUrl -}}">[{{- $langName -}}]</a>
         </div>
     </div>
 </nav>
@@ -30,7 +39,7 @@
                 <span></span><span></span><span></span>
             </div>
         </div>
-     
+
           <div class="menu" id="mobile-menu">
                 {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
