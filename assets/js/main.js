@@ -115,8 +115,8 @@ jQuery(function($) {
 
     $(document).ready(function() {
         _LyCustom.changeTitle()
-        _LyCustom.toggleTheme()
+        //_LyCustom.toggleTheme()
         _LyCustom.toggleMobileMenu()
-        copyButton()
+        //copyButton()
     });
 });
