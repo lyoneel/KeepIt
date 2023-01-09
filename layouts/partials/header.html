@@ -14,7 +14,11 @@
                   {{ end }}
                   <a class="menu-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ $finalUrl }}" title="{{ .Title }}">{{ .Name }}</a>
                 {{ end }}
-                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+
+                <!-- Ill focus in dark only at the moment
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>
+                -->
+
                 {{ $langUrl := .Site.BaseURL }}
                 {{ $langName := lower .Site.Language }}
                 {{ if eq $langName "en" }}
